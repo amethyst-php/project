@@ -14,7 +14,7 @@ class CreateProjectsTable extends Migration
     {
         Schema::create(Config::get('amethyst.project.data.project.table'), function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name')->unique();
+            $table->string('name');
             $table->text('description')->nullable();
             $table->integer('status_id')->unsigned();
             $table->foreign('status_id')->references('id')->on(Config::get('amethyst.taxonomy.data.taxonomy.table'));

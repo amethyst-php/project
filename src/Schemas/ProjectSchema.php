@@ -18,11 +18,11 @@ class ProjectSchema extends Schema
         return [
             Attributes\IdAttribute::make(),
             Attributes\TextAttribute::make('name')
-                ->setRequired(true)
-                ->setUnique(true),
+                ->setRequired(true),
             Attributes\LongTextAttribute::make('description'),
             \Railken\Amethyst\Attributes\TaxonomyAttribute::make('status_id', Config::get('amethyst.project.data.project.attributes.status.vocabulary'))
-                ->setRelationName('status'),
+                ->setRelationName('status')
+                ->setRequired(true),
             Attributes\NumberAttribute::make('value'),
             Attributes\EnumAttribute::make('target_type', array_keys(Config::get('amethyst.project.data.project.attributes.target.options')))
                 ->setRequired(true),
