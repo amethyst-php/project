@@ -29,4 +29,12 @@ class Project extends Model implements EntityContract
     {
         return $this->belongsTo(Taxonomy::class);
     }
+
+    /**
+     * Get all of the owning project models.
+     */
+    public function target()
+    {
+        return $this->morphTo();
+    }
 }

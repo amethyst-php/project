@@ -15,5 +15,10 @@ return [
         'status' => [
             'vocabulary' => 'Project Status',
         ],
+        'target' => [
+            'options' => [
+                Railken\Amethyst\Models\Foo::class => Railken\Amethyst\Managers\FooManager::class,
+            ],
+        ],
     ],
 ];

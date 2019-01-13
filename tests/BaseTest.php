@@ -21,6 +21,7 @@ abstract class BaseTest extends \Orchestra\Testbench\TestCase
     {
         return [
             \Railken\Amethyst\Providers\ProjectServiceProvider::class,
+            \Railken\Amethyst\Providers\FooServiceProvider::class,
         ];
     }
 }
