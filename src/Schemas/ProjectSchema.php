@@ -23,6 +23,7 @@ class ProjectSchema extends Schema
             Attributes\LongTextAttribute::make('description'),
             \Railken\Amethyst\Attributes\TaxonomyAttribute::make('status_id', Config::get('amethyst.project.data.project.attributes.status.vocabulary'))
                 ->setRelationName('status'),
+            Attributes\NumberAttribute::make('value'),
             Attributes\CreatedAtAttribute::make(),
             Attributes\UpdatedAtAttribute::make(),
             Attributes\DeletedAtAttribute::make(),

@@ -21,6 +21,7 @@ class ProjectFaker extends Faker
         $bag->set('description', $faker->text);
         $bag->set('status', TaxonomyFaker::make()->parameters()->toArray());
         $bag->set('status.parent.name', Config::get('amethyst.project.data.project.attributes.status.vocabulary'));
+        $bag->set('value', 23.11);
 
         return $bag;
     }
