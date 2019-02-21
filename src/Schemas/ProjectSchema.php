@@ -25,13 +25,11 @@ class ProjectSchema extends Schema
                 ->setRequired(true),
             Attributes\NumberAttribute::make('value')
                 ->setRequired(true),
-            Attributes\EnumAttribute::make('target_type', array_keys(Config::get('amethyst.project.data.project.attributes.target.options')))
-                ->setRequired(true),
+            Attributes\EnumAttribute::make('target_type', array_keys(Config::get('amethyst.project.data.project.attributes.target.options'))),
             Attributes\MorphToAttribute::make('target_id')
                 ->setRelationKey('target_type')
                 ->setRelationName('target')
-                ->setRelations(Config::get('amethyst.project.data.project.attributes.target.options'))
-                ->setRequired(true),
+                ->setRelations(Config::get('amethyst.project.data.project.attributes.target.options')),
             Attributes\CreatedAtAttribute::make(),
             Attributes\UpdatedAtAttribute::make(),
             Attributes\DeletedAtAttribute::make(),
