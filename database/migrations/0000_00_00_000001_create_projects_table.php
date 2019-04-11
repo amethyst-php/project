@@ -18,7 +18,6 @@ class CreateProjectsTable extends Migration
             $table->text('description')->nullable();
             $table->integer('status_id')->unsigned();
             $table->foreign('status_id')->references('id')->on(Config::get('amethyst.taxonomy.data.taxonomy.table'));
-            $table->float('value');
             $table->string('target_type')->nullable();
             $table->integer('target_id')->nullable();
             $table->timestamps();

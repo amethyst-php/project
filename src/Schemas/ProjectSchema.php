@@ -23,8 +23,6 @@ class ProjectSchema extends Schema
             \Railken\Amethyst\Attributes\TaxonomyAttribute::make('status_id', Config::get('amethyst.project.data.project.attributes.status.vocabulary'))
                 ->setRelationName('status')
                 ->setRequired(true),
-            Attributes\NumberAttribute::make('value')
-                ->setRequired(true),
             Attributes\EnumAttribute::make('target_type', array_keys(Config::get('amethyst.project.data.project.attributes.target.options'))),
             Attributes\MorphToAttribute::make('target_id')
                 ->setRelationKey('target_type')
