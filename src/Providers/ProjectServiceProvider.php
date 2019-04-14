@@ -24,7 +24,7 @@ class ProjectServiceProvider extends CommonServiceProvider
         app('amethyst.taxonomy')->add('project.status', Config::get('amethyst.project.data.project.attributes.status.vocabulary'), [
             'open',
             'working',
-            'closed'
+            'closed',
         ]);
     }
 }
