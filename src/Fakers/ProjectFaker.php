@@ -21,7 +21,7 @@ class ProjectFaker extends Faker
         $bag->set('description', $faker->text);
         $bag->set('status', TaxonomyFaker::make()->parameters()->toArray());
         $bag->set('status.parent.name', Config::get('amethyst.project.data.project.attributes.status.vocabulary'));
-        $bag->set('target_type', \Railken\Amethyst\Models\Foo::class);
+        $bag->set('target_type', 'foo');
         $bag->set('target', FooFaker::make()->parameters()->toArray());
 
         return $bag;
