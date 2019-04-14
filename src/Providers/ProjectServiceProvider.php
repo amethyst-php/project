@@ -22,10 +22,9 @@ class ProjectServiceProvider extends CommonServiceProvider
         });
 
         app('amethyst.taxonomy')->add('project.status', Config::get('amethyst.project.data.project.attributes.status.vocabulary'), [
-            'pending',
-            'started',
-            'suspended',
-            'canceled',
+            'open',
+            'working',
+            'closed'
         ]);
     }
 }
