@@ -14,7 +14,7 @@ class ProjectServiceProvider extends CommonServiceProvider
     public function register()
     {
         parent::register();
-        
+
         $this->app->register(\Railken\Amethyst\Providers\TaxonomyServiceProvider::class);
 
         \Illuminate\Database\Eloquent\Builder::macro('projects', function (): MorphMany {
