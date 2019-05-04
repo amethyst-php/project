@@ -17,14 +17,22 @@ class ProjectServiceProvider extends CommonServiceProvider
 
         $this->app->register(\Railken\Amethyst\Providers\TaxonomyServiceProvider::class);
 
-        \Illuminate\Database\Eloquent\Builder::macro('projects', function (): MorphMany {
-            return app('amethyst')->createMacroMorphRelation($this, \Railken\Amethyst\Models\Project::class, 'projects', 'target');
-        });
-
         app('amethyst.taxonomy')->add('project.status', Config::get('amethyst.project.data.project.attributes.status.vocabulary'), [
             'open',
             'working',
             'closed',
         ]);
+    }
+    
+    /**
+     * @inherit
+     */
+    public function boot()
+    {
+        parent::boot();
+    
+        \Illuminate\Database\Eloquent\Builder::macro('projects', function (): MorphMany {
+            return app('amethyst')->createMacroMorphRelation($this, \Railken\Amethyst\Models\Project::class, 'projects', 'target');
+        });
     }
 }
