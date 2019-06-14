@@ -30,9 +30,5 @@ class ProjectServiceProvider extends CommonServiceProvider
     public function boot()
     {
         parent::boot();
-
-        \Illuminate\Database\Eloquent\Builder::macro('projects', function (): MorphMany {
-            return app('amethyst')->createMacroMorphRelation($this, \Railken\Amethyst\Models\Project::class, 'projects', 'target');
-        });
     }
 }
