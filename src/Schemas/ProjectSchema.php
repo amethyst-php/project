@@ -22,11 +22,11 @@ class ProjectSchema extends Schema
             \Amethyst\Attributes\TaxonomyAttribute::make('status_id', app('amethyst.taxonomy')->get('project.status'))
                 ->setRelationName('status')
                 ->setRequired(true),
-            Attributes\EnumAttribute::make('target_type', app('amethyst')->getMorphListable('project', 'target')),
+            Attributes\EnumAttribute::make('target_type', app('amethyst')->getDataNames()),
             Attributes\MorphToAttribute::make('target_id')
                 ->setRelationKey('target_type')
                 ->setRelationName('target')
-                ->setRelations(app('amethyst')->getMorphRelationable('project', 'target')),
+                ->setRelations(app('amethyst')->getDataManagers()),
             Attributes\CreatedAtAttribute::make(),
             Attributes\UpdatedAtAttribute::make(),
             Attributes\DeletedAtAttribute::make(),
