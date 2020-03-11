@@ -22,7 +22,7 @@ class ProjectSchema extends Schema
             \Amethyst\Attributes\TaxonomyAttribute::make('status_id', app('amethyst.taxonomy')->get('project.status'))
                 ->setRelationName('status')
                 ->setRequired(true),
-            Attributes\EnumAttribute::make('target_type', app('amethyst')->getDataNames()),
+            \Amethyst\Core\Attributes\DataNameAttribute::make('target_type'),
             Attributes\MorphToAttribute::make('target_id')
                 ->setRelationKey('target_type')
                 ->setRelationName('target')
